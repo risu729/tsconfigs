@@ -1,0 +1,40 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "@risu729/tsconfigs",
+	"version": "0.0.0-development",
+	"license": "MIT",
+	"author": "risu729",
+	"homepage": "https://github.com/risu729/tsconfigs#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/risu729/tsconfigs.git"
+	},
+	"bugs": {
+		"url": "https://github.com/risu729/tsconfigs/issues"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "19.7.1",
+		"@commitlint/config-conventional": "19.7.1",
+		"@commitlint/cz-commitlint": "19.6.1",
+		"@commitlint/types": "19.5.0",
+		"@cspell/cspell-types": "8.17.5",
+		"@types/bun": "1.2.4",
+		"commitizen": "4.3.1",
+		"typescript": "5.8.2"
+	},
+	"type": "module",
+	"files": ["presets"],
+	"exports": {
+		".": "./presets/base.json",
+		"./base": "./presets/base.json",
+		"./bundler": "./presets/bundler/base.json",
+		"./bundler/base": "./presets/bundler/base.json",
+		"./tsc": "./presets/tsc/base.json",
+		"./tsc/base": "./presets/tsc/base.json",
+		"./package.json": "./package.json"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	}
+}

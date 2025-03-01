@@ -1,0 +1,64 @@
+{
+	// ref: https://www.typescriptlang.org/tsconfig/
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		// Type Checking
+		// ref: https://www.typescriptlang.org/tsconfig/#Type_Checking_6248
+		// enable all flags
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"exactOptionalPropertyTypes": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"strict": true,
+		// Modules
+		// ref: https://www.typescriptlang.org/tsconfig/#Modules_6244
+		"module": "Preserve",
+		"noUncheckedSideEffectImports": true,
+		"resolveJsonModule": true,
+		// Emit
+		// ref: https://www.typescriptlang.org/tsconfig/#Emit_6246
+		"noEmit": true,
+		// JavaScript Support
+		// ref: https://www.typescriptlang.org/tsconfig/#JavaScript_Support_6247
+		// Editor Support
+		// ref: https://www.typescriptlang.org/tsconfig/#Editor_Support_6249
+		// Interop Constraints
+		// ref: https://www.typescriptlang.org/tsconfig/#Interop_Constraints_6252
+		"erasableSyntaxOnly": true,
+		// cannot be enabled with allowJs
+		// ref: https://github.com/microsoft/TypeScript/issues/58262
+		// "isolatedDeclarations": true,
+		"verbatimModuleSyntax": true,
+		// Backwards Compatibility
+		// ref: https://www.typescriptlang.org/tsconfig/#Backwards_Compatibility_6253
+		// Language and Environment
+		// ref: https://www.typescriptlang.org/tsconfig/#Language_and_Environment_6254
+		"lib": ["ESNext"],
+		"moduleDetection": "force",
+		"target": "ESNext",
+		// Compiler Diagnostics
+		// ref: https://www.typescriptlang.org/tsconfig/#Compiler_Diagnostics_6251
+		// Projects
+		// ref: https://www.typescriptlang.org/tsconfig/#Projects_6255
+		"incremental": true,
+		// Output Formatting
+		// ref: https://www.typescriptlang.org/tsconfig/#Output_Formatting_6256
+		// Completeness
+		// ref: https://www.typescriptlang.org/tsconfig/#Completeness_6257
+		"skipLibCheck": true
+	},
+	"include": [
+		"${configDir}/**/*",
+		// include dot files for most cases
+		// ref: https://github.com/microsoft/TypeScript/issues/49555
+		"${configDir}/**/.*",
+		"${configDir}/**/.*/**/*",
+		"${configDir}/**/.*/**/.*"
+	]
+}

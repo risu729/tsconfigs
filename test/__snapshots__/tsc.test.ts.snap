@@ -1,0 +1,176 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tsc --showConfig ./presets/base.json 1`] = `
+"{
+    "compilerOptions": {
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "exactOptionalPropertyTypes": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUncheckedIndexedAccess": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "strict": true,
+        "module": "preserve",
+        "noUncheckedSideEffectImports": true,
+        "resolveJsonModule": true,
+        "noEmit": true,
+        "erasableSyntaxOnly": true,
+        "verbatimModuleSyntax": true,
+        "lib": [
+            "esnext"
+        ],
+        "moduleDetection": "force",
+        "target": "esnext",
+        "incremental": true,
+        "skipLibCheck": true,
+        "moduleResolution": "bundler",
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "resolvePackageJsonExports": true,
+        "resolvePackageJsonImports": true,
+        "preserveConstEnums": true,
+        "useDefineForClassFields": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": true,
+        "strictBuiltinIteratorReturn": true,
+        "alwaysStrict": true,
+        "useUnknownInCatchVariables": true
+    },
+    "include": [
+        "./**/*",
+        "./**/.*",
+        "./**/.*/**/*",
+        "./**/.*/**/.*"
+    ]
+}
+"
+`;
+
+exports[`tsc --showConfig ./presets/bundler/base.json 1`] = `
+"{
+    "compilerOptions": {
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "exactOptionalPropertyTypes": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUncheckedIndexedAccess": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "strict": true,
+        "module": "preserve",
+        "noUncheckedSideEffectImports": true,
+        "resolveJsonModule": true,
+        "noEmit": true,
+        "erasableSyntaxOnly": true,
+        "verbatimModuleSyntax": true,
+        "lib": [
+            "esnext"
+        ],
+        "moduleDetection": "force",
+        "target": "esnext",
+        "incremental": true,
+        "skipLibCheck": true,
+        "allowImportingTsExtensions": true,
+        "allowJs": true,
+        "checkJs": true,
+        "moduleResolution": "bundler",
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "resolvePackageJsonExports": true,
+        "resolvePackageJsonImports": true,
+        "preserveConstEnums": true,
+        "useDefineForClassFields": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": true,
+        "strictBuiltinIteratorReturn": true,
+        "alwaysStrict": true,
+        "useUnknownInCatchVariables": true
+    },
+    "include": [
+        "./**/*",
+        "./**/.*",
+        "./**/.*/**/*",
+        "./**/.*/**/.*"
+    ]
+}
+"
+`;
+
+exports[`tsc --showConfig ./presets/tsc/base.json 1`] = `
+"{
+    "compilerOptions": {
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "exactOptionalPropertyTypes": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUncheckedIndexedAccess": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "strict": true,
+        "module": "nodenext",
+        "noUncheckedSideEffectImports": true,
+        "resolveJsonModule": true,
+        "noEmit": true,
+        "erasableSyntaxOnly": true,
+        "verbatimModuleSyntax": true,
+        "lib": [
+            "esnext"
+        ],
+        "moduleDetection": "force",
+        "target": "esnext",
+        "incremental": true,
+        "skipLibCheck": true,
+        "isolatedDeclarations": true,
+        "declaration": true,
+        "declarationMap": true,
+        "outDir": "./dist",
+        "moduleResolution": "nodenext",
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "resolvePackageJsonExports": true,
+        "resolvePackageJsonImports": true,
+        "preserveConstEnums": true,
+        "useDefineForClassFields": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": true,
+        "strictBuiltinIteratorReturn": true,
+        "alwaysStrict": true,
+        "useUnknownInCatchVariables": true
+    },
+    "include": [
+        "./src/**/*",
+        "./src/**/.*",
+        "./src/**/.*/**/*",
+        "./src/**/.*/**/.*"
+    ],
+    "exclude": [
+        "./dist"
+    ]
+}
+"
+`;

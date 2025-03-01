@@ -1,0 +1,76 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  lint:
+    permissions:
+      # we must pass all the required permissions of the callee workflow
+      contents: read
+      actions: read
+    uses: ./.github/workflows/lint.yml
+
+  test:
+    permissions:
+      # we must pass all the required permissions of the callee workflow
+      contents: read
+      actions: read
+    uses: ./.github/workflows/test.yml
+
+  release:
+    needs:
+      - lint
+      - test
+
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write # for GitHub Release
+      issues: write # for commenting on issues
+      pull-requests: write # for commenting on pull requests
+      id-token: write # for npm provenance
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0 # fetch all history for semantic-release
+          persist-credentials: false
+
+      - name: Install mise
+        uses: jdx/mise-action@5083fe46898c414b2475087cc79da59e7da859e8 # v2.1.11
+        with:
+          version: 2025.2.9
+          cache_save: ${{ github.ref_name == 'main' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Release
+        run: semantic-release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  actions-timeline:
+    needs:
+      - release
+    if: ${{ !cancelled() }}
+
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      actions: read
+
+    steps:
+      - name: actions-timeline
+        # cspell:ignore kesin
+        uses: Kesin11/actions-timeline@427ee2cf860166e404d0d69b4f2b24012bb7af4f # v2.2.3
