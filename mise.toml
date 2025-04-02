@@ -15,6 +15,8 @@ shellcheck = "0.10.0"
 "aqua:suzuki-shunsuke/pinact" = "1.6.0"
 taplo = "0.9.3"
 yamlfmt = "0.16.0"
+# required for pipx backend
+uv = "0.6.11"
 yamllint = "1.37.0"
 "npm:cspell" = "8.18.1"
 lychee = "0.18.1"
@@ -24,11 +26,6 @@ typos = "1.31.1"
 
 [settings]
 experimental = true
-disable_backends = [
-	# cspell:ignore pipx
-	# disable pipx backend not to require pipx/uv
-	"pipx",
-]
 
 [settings.npm]
 bun = true
