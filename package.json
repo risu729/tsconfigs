@@ -20,7 +20,7 @@
 		"@cspell/cspell-types": "8.18.1",
 		"@types/bun": "1.2.8",
 		"commitizen": "4.3.1",
-		"typescript": "5.8.2"
+		"typescript": "5.8.3"
 	},
 	"type": "module",
 	"files": ["presets"],
