@@ -2,26 +2,26 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [tools]
-bun = "1.2.13"
-node = "24.0.2"
-"npm:semantic-release" = "24.2.4"
+bun = "1.2.16"
+node = "24.2.0"
+"npm:semantic-release" = "24.2.5"
 biome = "1.9.4"
 actionlint = "1.7.7"
 # required for actionlint
 shellcheck = "0.10.0"
-"aqua:suzuki-shunsuke/ghalint" = "1.4.0" # cspell:ignore shunsuke
-"aqua:suzuki-shunsuke/pinact" = "3.1.1"
-taplo = "0.9.3"
-yamlfmt = "0.16.0"
+ghalint = "1.4.1"
+pinact = "3.1.2"
+taplo = "0.10.0"
+yamlfmt = "0.17.0"
 # cspell:ignore pipx
 # required for pipx backend
-uv = "0.7.5"
+uv = "0.7.12"
 yamllint = "1.37.1"
-"npm:cspell" = "9.0.1"
-lychee = "0.18.1"
-typos = "1.32.0"
+"npm:cspell" = "9.0.2"
+lychee = "0.19.0"
+typos = "1.33.1"
 "npm:ignore-sync" = "8.0.0"
-"npm:jschema-validator" = "1.0.15"
+"npm:jschema-validator" = "1.0.16"
 
 [settings]
 experimental = true
