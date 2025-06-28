@@ -1,14 +1,6 @@
 {
 	"$schema": "https://json.schemastore.org/package.json",
-	"name": "@risu729/tsconfigs",
-	"version": "0.0.0-development",
-	"license": "MIT",
 	"author": "risu729",
-	"homepage": "https://github.com/risu729/tsconfigs#readme",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/risu729/tsconfigs.git"
-	},
 	"bugs": {
 		"url": "https://github.com/risu729/tsconfigs/issues"
 	},
@@ -22,19 +14,29 @@
 		"commitizen": "4.3.1",
 		"typescript": "5.8.3"
 	},
-	"type": "module",
-	"files": ["presets"],
 	"exports": {
 		".": "./presets/base.json",
 		"./base": "./presets/base.json",
 		"./bundler": "./presets/bundler/base.json",
 		"./bundler/base": "./presets/bundler/base.json",
+		"./package.json": "./package.json",
 		"./tsc": "./presets/tsc/base.json",
-		"./tsc/base": "./presets/tsc/base.json",
-		"./package.json": "./package.json"
+		"./tsc/base": "./presets/tsc/base.json"
 	},
+	"files": [
+		"presets"
+	],
+	"homepage": "https://github.com/risu729/tsconfigs#readme",
+	"license": "MIT",
+	"name": "@risu729/tsconfigs",
 	"publishConfig": {
 		"access": "public",
 		"provenance": true
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/risu729/tsconfigs.git"
+	},
+	"type": "module",
+	"version": "0.0.0-development"
 }
