@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { $ } from "bun";
 import { exports } from "../package.json" with { type: "json" };
 
-const tsconfigPaths = [
+const tsconfigPaths: string[] = [
 	...new Set(
 		Object.entries(exports)
 			.filter(([key]) => !key.endsWith("package.json"))
