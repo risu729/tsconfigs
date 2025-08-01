@@ -12,7 +12,7 @@
 		"@cspell/cspell-types": "9.2.0",
 		"@types/bun": "1.2.19",
 		"commitizen": "4.3.1",
-		"typescript": "5.8.3"
+		"typescript": "5.9.2"
 	},
 	"exports": {
 		".": "./presets/base.json",
