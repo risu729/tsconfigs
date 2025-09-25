@@ -5,10 +5,10 @@
 		"url": "https://github.com/risu729/tsconfigs/issues"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "19.8.1",
-		"@commitlint/config-conventional": "19.8.1",
-		"@commitlint/cz-commitlint": "19.8.1",
-		"@commitlint/types": "19.8.1",
+		"@commitlint/cli": "20.0.0",
+		"@commitlint/config-conventional": "20.0.0",
+		"@commitlint/cz-commitlint": "20.0.0",
+		"@commitlint/types": "20.0.0",
 		"@cspell/cspell-types": "9.2.1",
 		"@types/bun": "1.2.22",
 		"commitizen": "4.3.1",
