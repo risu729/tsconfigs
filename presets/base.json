@@ -21,6 +21,7 @@
 		"module": "Preserve",
 		"noUncheckedSideEffectImports": true,
 		"resolveJsonModule": true,
+		"types": [],
 		// Emit
 		// ref: https://www.typescriptlang.org/tsconfig/#Emit_6246
 		"noEmit": true,

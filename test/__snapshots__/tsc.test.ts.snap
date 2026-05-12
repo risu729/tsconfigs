@@ -1,4 +1,4 @@
-// Bun Snapshot v1, https://goo.gl/fbAQLP
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
 
 exports[`tsc --showConfig ./presets/base.json 1`] = `
 "{
@@ -17,6 +17,7 @@ exports[`tsc --showConfig ./presets/base.json 1`] = `
         "module": "preserve",
         "noUncheckedSideEffectImports": true,
         "resolveJsonModule": true,
+        "types": [],
         "noEmit": true,
         "erasableSyntaxOnly": true,
         "verbatimModuleSyntax": true,
@@ -72,6 +73,7 @@ exports[`tsc --showConfig ./presets/bundler/base.json 1`] = `
         "module": "preserve",
         "noUncheckedSideEffectImports": true,
         "resolveJsonModule": true,
+        "types": [],
         "noEmit": true,
         "erasableSyntaxOnly": true,
         "verbatimModuleSyntax": true,
@@ -130,6 +132,7 @@ exports[`tsc --showConfig ./presets/tsc/base.json 1`] = `
         "module": "nodenext",
         "noUncheckedSideEffectImports": true,
         "resolveJsonModule": true,
+        "types": [],
         "noEmit": true,
         "erasableSyntaxOnly": true,
         "verbatimModuleSyntax": true,

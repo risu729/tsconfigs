@@ -5,14 +5,14 @@
 		"url": "https://github.com/risu729/tsconfigs/issues"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "19.8.1",
-		"@commitlint/config-conventional": "19.8.1",
-		"@commitlint/cz-commitlint": "19.8.1",
-		"@commitlint/types": "19.8.1",
-		"@cspell/cspell-types": "9.2.0",
-		"@types/bun": "1.2.20",
+		"@commitlint/cli": "20.5.3",
+		"@commitlint/config-conventional": "20.5.3",
+		"@commitlint/cz-commitlint": "20.5.3",
+		"@commitlint/types": "20.5.0",
+		"@cspell/cspell-types": "9.8.0",
+		"@types/bun": "1.3.13",
 		"commitizen": "4.3.1",
-		"typescript": "5.9.2"
+		"typescript": "5.9.3"
 	},
 	"exports": {
 		".": "./presets/base.json",
