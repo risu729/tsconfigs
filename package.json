@@ -30,7 +30,7 @@
 	"license": "MIT",
 	"name": "@risu729/tsconfigs",
 	"peerDependencies": {
-		"typescript": "^6.0.0"
+		"typescript": "6.0.3"
 	},
 	"publishConfig": {
 		"access": "public",
