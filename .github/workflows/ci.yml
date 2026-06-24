@@ -1,12 +1,15 @@
-# name must be autofix.ci for security reasons
-# ref: https://autofix.ci/security
-name: autofix.ci
+name: CI
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * SUN"
 
 concurrency:
   group: ${{ github.workflow }}-${{ case(github.event_name == 'pull_request', github.event.pull_request.number, github.ref) }}
@@ -19,8 +22,33 @@ defaults:
     shell: bash
 
 jobs:
-  autofix:
-    name: Autofix
+  lint:
+    name: Lint
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read # for checkout
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Install mise
+        uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4.2.0
+        with:
+          version: 2026.6.13
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Run check
+        run: mise run check --lint
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+  test:
+    name: Test
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
@@ -39,24 +67,28 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      - name: Run autofix
-        run: mise run check --continue-on-error
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      - name: Run tests
+        run: mise run test
 
-      - name: autofix.ci
-        uses: autofix-ci/action@c5b2d67aa2274e7b5a18224e8171550871fc7e4a # v1.3.4
-        with:
-          commit-message: 'style: apply automated fixes'
-          # set to false to avoid notifications of canceled workflows
-          fail-fast: false
+  ci-check:
+    name: CI Check
+    needs:
+      - lint
+      - test
+    # ref: https://github.com/aquaproj/aqua-registry/pull/38449#issuecomment-3038859524
+    if: always() && (contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled'))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions: {}
+
+    steps:
+      - run: exit 1
 
   actions-timeline:
     name: Generate Actions Timeline
     needs:
-      - autofix
-    if: ${{ !cancelled() }}
+      - ci-check
+    if: always() && !cancelled()
 
     runs-on: ubuntu-24.04
     timeout-minutes: 5
