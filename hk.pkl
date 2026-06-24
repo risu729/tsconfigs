@@ -1,0 +1,20 @@
+amends "https://raw.githubusercontent.com/risu729/hk-config/v1.0.0/presets.pkl"
+import "https://raw.githubusercontent.com/risu729/hk-config/v1.0.0/helpers.pkl"
+
+local picked = helpers.pick(new Listing {
+  "oxlint"
+  "oxfmt"
+  "tsc"
+  "github-actions"
+  "tombi"
+  "yaml"
+  "typos"
+  "hygiene"
+})
+
+hooks = helpers.standardHooks((picked) {
+  ["jsonschema"] = new Step {
+    glob = List("package.json", "presets/**/*.json")
+    check = "jschema-validator"
+  }
+})

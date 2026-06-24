@@ -1,20 +1,21 @@
 {
 	"$schema": "https://json.schemastore.org/package.json",
-	"author": "risu729",
+	"name": "@risu729/tsconfigs",
+	"version": "0.0.0-development",
+	"homepage": "https://github.com/risu729/tsconfigs#readme",
 	"bugs": {
 		"url": "https://github.com/risu729/tsconfigs/issues"
 	},
-	"devDependencies": {
-		"@commitlint/cli": "21.0.2",
-		"@commitlint/config-conventional": "21.0.2",
-		"@commitlint/cz-commitlint": "21.0.2",
-		"@commitlint/types": "21.0.1",
-		"@cspell/cspell-types": "10.0.1",
-		"@types/bun": "1.3.14",
-		"commitizen": "4.3.2",
-		"semantic-release": "25.0.5",
-		"typescript": "6.0.3"
+	"license": "MIT",
+	"author": "risu729",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/risu729/tsconfigs.git"
 	},
+	"files": [
+		"presets"
+	],
+	"type": "module",
 	"exports": {
 		".": "./presets/base.json",
 		"./base": "./presets/base.json",
@@ -24,23 +25,14 @@
 		"./tsc": "./presets/tsc/base.json",
 		"./tsc/base": "./presets/tsc/base.json"
 	},
-	"files": [
-		"presets"
-	],
-	"homepage": "https://github.com/risu729/tsconfigs#readme",
-	"license": "MIT",
-	"name": "@risu729/tsconfigs",
-	"peerDependencies": {
-		"typescript": "6.0.3"
-	},
 	"publishConfig": {
 		"access": "public",
 		"provenance": true
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/risu729/tsconfigs.git"
+	"devDependencies": {
+		"@types/bun": "1.3.14"
 	},
-	"type": "module",
-	"version": "0.0.0-development"
+	"peerDependencies": {
+		"typescript": "6.0.3"
+	}
 }

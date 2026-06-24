@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions: {}
 
 defaults:
@@ -12,25 +16,8 @@ defaults:
     shell: bash
 
 jobs:
-  lint:
-    permissions:
-      # we must pass all the required permissions of the callee workflow
-      contents: read
-      actions: read
-    uses: ./.github/workflows/lint.yml
-
-  test:
-    permissions:
-      # we must pass all the required permissions of the callee workflow
-      contents: read
-      actions: read
-    uses: ./.github/workflows/test.yml
-
   release:
-    needs:
-      - lint
-      - test
-
+    name: Release
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
@@ -52,11 +39,12 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
 
       - name: Release
-        run: semantic-release
         env:
           GITHUB_TOKEN: ${{ github.token }}
+        run: semantic-release
 
   actions-timeline:
+    name: Generate Actions Timeline
     needs:
       - release
     if: ${{ !cancelled() }}
@@ -64,9 +52,8 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
-      actions: read
+      actions: read # actions-timeline reads workflow run metadata
 
     steps:
       - name: actions-timeline
-        # cspell:ignore kesin
         uses: Kesin11/actions-timeline@44c9c178ffb2fb1d9859614a3ffa79ccfb77565e # v3.1.0
