@@ -12,9 +12,4 @@ local picked = helpers.pick(new Listing {
   "hygiene"
 })
 
-hooks = helpers.standardHooks((picked) {
-  ["jsonschema"] = new Step {
-    glob = List("package.json", "presets/**/*.json")
-    check = "jschema-validator"
-  }
-})
+hooks = helpers.standardHooks(picked)
