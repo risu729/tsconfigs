@@ -5,76 +5,81 @@ exports[`tsc --showConfig ./presets/base.json 1`] = `
     "compilerOptions": {
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
+        "erasableSyntaxOnly": true,
         "exactOptionalPropertyTypes": true,
+        "incremental": true,
+        "lib": [
+            "esnext"
+        ],
+        "module": "preserve",
+        "moduleDetection": "force",
+        "noEmit": true,
         "noFallthroughCasesInSwitch": true,
-        "noImplicitOverride": true,
         "noImplicitReturns": true,
         "noPropertyAccessFromIndexSignature": true,
         "noUncheckedIndexedAccess": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "module": "preserve",
+        "noImplicitOverride": true,
         "resolveJsonModule": true,
-        "noEmit": true,
-        "erasableSyntaxOnly": true,
-        "verbatimModuleSyntax": true,
-        "lib": [
-            "esnext"
-        ],
-        "moduleDetection": "force",
-        "incremental": true,
         "skipLibCheck": true,
+        "verbatimModuleSyntax": true,
         "isolatedModules": true,
         "preserveConstEnums": true
     },
+    "files": [
+        "./bundler/src/fixtures.ts",
+        "./tsc/src/fixtures.ts"
+    ],
     "include": [
         "./**/*",
         "./**/.*",
         "./**/.*/**/*",
         "./**/.*/**/.*"
     ]
-}
-"
+}"
 `;
 
 exports[`tsc --showConfig ./presets/bundler/base.json 1`] = `
 "{
     "compilerOptions": {
+        "allowJs": true,
+        "allowImportingTsExtensions": true,
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
+        "checkJs": true,
+        "erasableSyntaxOnly": true,
         "exactOptionalPropertyTypes": true,
+        "incremental": true,
+        "lib": [
+            "esnext"
+        ],
+        "module": "preserve",
+        "moduleDetection": "force",
+        "noEmit": true,
         "noFallthroughCasesInSwitch": true,
-        "noImplicitOverride": true,
         "noImplicitReturns": true,
         "noPropertyAccessFromIndexSignature": true,
         "noUncheckedIndexedAccess": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "module": "preserve",
+        "noImplicitOverride": true,
         "resolveJsonModule": true,
-        "noEmit": true,
-        "erasableSyntaxOnly": true,
-        "verbatimModuleSyntax": true,
-        "lib": [
-            "esnext"
-        ],
-        "moduleDetection": "force",
-        "incremental": true,
         "skipLibCheck": true,
-        "allowImportingTsExtensions": true,
-        "allowJs": true,
-        "checkJs": true,
+        "verbatimModuleSyntax": true,
         "isolatedModules": true,
         "preserveConstEnums": true
     },
+    "files": [
+        "./src/fixtures.ts"
+    ],
     "include": [
         "./**/*",
         "./**/.*",
         "./**/.*/**/*",
         "./**/.*/**/.*"
     ]
-}
-"
+}"
 `;
 
 exports[`tsc --showConfig ./presets/tsc/base.json 1`] = `
@@ -82,33 +87,36 @@ exports[`tsc --showConfig ./presets/tsc/base.json 1`] = `
     "compilerOptions": {
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
+        "declaration": true,
+        "declarationMap": true,
+        "erasableSyntaxOnly": true,
         "exactOptionalPropertyTypes": true,
+        "isolatedDeclarations": true,
+        "incremental": true,
+        "lib": [
+            "esnext"
+        ],
+        "module": "nodenext",
+        "moduleDetection": "force",
+        "noEmit": true,
         "noFallthroughCasesInSwitch": true,
-        "noImplicitOverride": true,
         "noImplicitReturns": true,
         "noPropertyAccessFromIndexSignature": true,
         "noUncheckedIndexedAccess": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "module": "nodenext",
-        "resolveJsonModule": true,
-        "noEmit": true,
-        "erasableSyntaxOnly": true,
-        "verbatimModuleSyntax": true,
-        "lib": [
-            "esnext"
-        ],
-        "moduleDetection": "force",
-        "incremental": true,
-        "skipLibCheck": true,
-        "isolatedDeclarations": true,
-        "declaration": true,
-        "declarationMap": true,
+        "noImplicitOverride": true,
         "outDir": "./dist",
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "verbatimModuleSyntax": true,
         "moduleResolution": "nodenext",
         "isolatedModules": true,
         "preserveConstEnums": true
     },
+    "files": [
+        "./src/fixtures.ts"
+    ],
     "include": [
         "./src/**/*",
         "./src/**/.*",
@@ -118,6 +126,5 @@ exports[`tsc --showConfig ./presets/tsc/base.json 1`] = `
     "exclude": [
         "./dist"
     ]
-}
-"
+}"
 `;
