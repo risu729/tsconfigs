@@ -2,4 +2,12 @@
 	// ref: https://docs.renovatebot.com/configuration-options/
 	$schema: "https://docs.renovatebot.com/renovate-schema.json",
 	extends: ["github>risu729/renovate-config#3.19.2"],
+	packageRules: [
+		{
+			// the shared preset pins versions, but a pinned peer dependency
+			// forces consumers onto one exact typescript version
+			matchDepTypes: ["peerDependencies"],
+			rangeStrategy: "widen",
+		},
+	],
 }
