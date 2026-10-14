@@ -25,6 +25,9 @@ typos = "1.51.1"
 "npm:typescript" = "7.0.2"
 
 [settings]
+lockfile = true
+lockfile_mode = "generate"
+lockfile_platforms = ["linux-x64", "macos-arm64"]
 experimental = true
 
 [settings.npm]
