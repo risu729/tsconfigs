@@ -31,7 +31,7 @@ lockfile_platforms = ["linux-x64", "macos-arm64"]
 experimental = true
 
 [settings.npm]
-package_manager = "bun"
+package_manager = "aube"
 
 [task_config]
 includes = ["tasks.toml"]
