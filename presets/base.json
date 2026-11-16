@@ -18,6 +18,7 @@
 		// Modules
 		// ref: https://www.typescriptlang.org/tsconfig/#Modules_6244
 		"module": "Preserve",
+		"resolveJsonModule": true,
 		// Emit
 		// ref: https://www.typescriptlang.org/tsconfig/#Emit_6246
 		"noEmit": true,

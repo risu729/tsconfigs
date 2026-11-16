@@ -8,7 +8,7 @@
 		"allowImportingTsExtensions": true,
 		// JavaScript Support
 		// ref: https://www.typescriptlang.org/tsconfig/#JavaScript_Support_6247
-		// checkJs also enables allowJs
+		"allowJs": true,
 		"checkJs": true
 	}
 }

@@ -21,6 +21,7 @@ exports[`tsc --showConfig ./presets/base.json 1`] = `
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noImplicitOverride": true,
+        "resolveJsonModule": true,
         "skipLibCheck": true,
         "verbatimModuleSyntax": true,
         "isolatedModules": true,
@@ -42,6 +43,7 @@ exports[`tsc --showConfig ./presets/base.json 1`] = `
 exports[`tsc --showConfig ./presets/bundler/base.json 1`] = `
 "{
     "compilerOptions": {
+        "allowJs": true,
         "allowImportingTsExtensions": true,
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
@@ -62,11 +64,11 @@ exports[`tsc --showConfig ./presets/bundler/base.json 1`] = `
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noImplicitOverride": true,
+        "resolveJsonModule": true,
         "skipLibCheck": true,
         "verbatimModuleSyntax": true,
         "isolatedModules": true,
-        "preserveConstEnums": true,
-        "allowJs": true
+        "preserveConstEnums": true
     },
     "files": [
         "./src/fixtures.ts"
@@ -105,6 +107,7 @@ exports[`tsc --showConfig ./presets/tsc/base.json 1`] = `
         "noUnusedParameters": true,
         "noImplicitOverride": true,
         "outDir": "./dist",
+        "resolveJsonModule": true,
         "skipLibCheck": true,
         "verbatimModuleSyntax": true,
         "moduleResolution": "nodenext",

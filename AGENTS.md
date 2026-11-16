@@ -27,10 +27,7 @@ postinstall hook also runs `hk install --mise`, which installs the git hooks.
 | Update test snapshots      | `mise run test:update-snapshots` |
 
 Review snapshot changes in [`test/__snapshots__/`](test/__snapshots__) as part
-of the change; they show the compiler options consumers get. `tsc --showConfig`
-omits some options left to their defaults, such as `resolveJsonModule`, so
-[`test/effective.test.ts`](test/effective.test.ts) compiles small projects to
-check their effect.
+of the change; they show the effective compiler options consumers get.
 
 The `typescript` peer dependency is a range (`^6.0.0 || ^7.0.0`), not a pin;
 [`.github/renovate.json5`](.github/renovate.json5) widens it instead of pinning
@@ -113,6 +110,15 @@ from an extended preset or an earlier rule, for example a Renovate
 `packageRules` entry that restores a default changed by [the shared
 preset](https://github.com/risu729/renovate-config). Keep such a value and say
 in a comment what it overrides.
+
+The default must be the same in every tool version the repository allows, such
+as each mise version from `min_version`. When an older allowed version has a
+different default, raise the minimum in the same change or keep the value.
+
+A published preset also keeps a value whose default depends on an option that
+consumers may change. For example, TypeScript implies `resolveJsonModule` for
+`module: Preserve` but not for `Node16` or `Node18`, and `allowJs` follows
+`checkJs`, so the presets set both.
 
 ## Design Decisions
 
