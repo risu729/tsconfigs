@@ -6,20 +6,9 @@
 		// Modules
 		// ref: https://www.typescriptlang.org/tsconfig/#Modules_6244
 		"allowImportingTsExtensions": true,
-		// Emit
-		// ref: https://www.typescriptlang.org/tsconfig/#Emit_6246
-		"noEmit": true,
 		// JavaScript Support
 		// ref: https://www.typescriptlang.org/tsconfig/#JavaScript_Support_6247
-		"allowJs": true,
+		// checkJs also enables allowJs
 		"checkJs": true
-	},
-	"include": [
-		"${configDir}/**/*",
-		// include dot files for most cases
-		// ref: https://github.com/microsoft/TypeScript/issues/49555
-		"${configDir}/**/.*",
-		"${configDir}/**/.*/**/*",
-		"${configDir}/**/.*/**/.*"
-	]
+	}
 }

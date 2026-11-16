@@ -27,7 +27,10 @@ postinstall hook also runs `hk install --mise`, which installs the git hooks.
 | Update test snapshots      | `mise run test:update-snapshots` |
 
 Review snapshot changes in [`test/__snapshots__/`](test/__snapshots__) as part
-of the change; they show the effective compiler options consumers get.
+of the change; they show the compiler options consumers get. `tsc --showConfig`
+omits some options left to their defaults, such as `resolveJsonModule`, so
+[`test/effective.test.ts`](test/effective.test.ts) compiles small projects to
+check their effect.
 
 The `typescript` peer dependency is a range (`^6.0.0 || ^7.0.0`), not a pin;
 [`.github/renovate.json5`](.github/renovate.json5) widens it instead of pinning
